@@ -1,3 +1,12 @@
+/*
+1. Modelo
+2. Interface
+3. Repositorio
+4. Servicios
+5. Controlador
+ */
+
+
 package co.usa.ciclo3.ciclo3;
 
 import org.springframework.boot.SpringApplication;
