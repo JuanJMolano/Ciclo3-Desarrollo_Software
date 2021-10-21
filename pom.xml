@@ -13,9 +13,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ciclo3</name>
 	<description>Project for Spring Boot</description>
+
 	<properties>
 		<java.version>11</java.version>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
