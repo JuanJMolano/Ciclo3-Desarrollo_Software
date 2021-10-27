@@ -1,12 +1,11 @@
 package co.usa.ciclo3.ciclo3.service;
 
+import java.util.List;
+import java.util.Optional;
 import co.usa.ciclo3.ciclo3.model.Category;
 import co.usa.ciclo3.ciclo3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CategoryService {
@@ -45,8 +44,10 @@ public class CategoryService {
         }
         return category;
     }
+
     public boolean deletecategory(int categoryId){
-        Boolean d=getCategory(categoryId).map(category -> {metodosCrud.delete(category);
+        Boolean d=getCategory(categoryId).map(category -> {
+            metodosCrud.delete(category);
             return true;
         }).orElse(false);
         return d;
