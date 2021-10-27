@@ -22,7 +22,7 @@ public class Category implements Serializable{
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
     @JsonIgnoreProperties("category")
-    public List<Ortopedic> ortopedics;
+    private List<Ortopedic> ortopedics;
 
     public Integer getId() {return id;}
 

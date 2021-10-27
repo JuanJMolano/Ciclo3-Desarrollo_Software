@@ -2,8 +2,6 @@ package co.usa.ciclo3.ciclo3.service;
 
 import java.util.List;
 import java.util.Optional;
-
-import antlr.debug.MessageAdapter;
 import co.usa.ciclo3.ciclo3.model.Message;
 import co.usa.ciclo3.ciclo3.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageService {
     @Autowired
-
     private MessageRepository metodosCrud;
 
     public List<Message> getAll(){return metodosCrud.getAll();}
@@ -23,7 +20,7 @@ public class MessageService {
         if (message.getIdMessage()==null){
             return metodosCrud.save(message);
         }else{
-            Optional<Message> e=metodosCrud.getMessage(message.getIdMessage());
+            Optional<Message> e = metodosCrud.getMessage(message.getIdMessage());
             if(e.isEmpty()){
                 return metodosCrud.save(message);
             }else{

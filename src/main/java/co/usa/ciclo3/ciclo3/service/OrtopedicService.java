@@ -1,14 +1,11 @@
 package co.usa.ciclo3.ciclo3.service;
 
-import co.usa.ciclo3.ciclo3.model.Ortopedic;
-import co.usa.ciclo3.ciclo3.repository.OrtopedicRepository;
-import org.aspectj.weaver.ast.Or;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import co.usa.ciclo3.ciclo3.model.Ortopedic;
+import co.usa.ciclo3.ciclo3.repository.OrtopedicRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class OrtopedicService {
