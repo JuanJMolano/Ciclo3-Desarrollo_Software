@@ -1,8 +1,14 @@
 package co.usa.ciclo3.ciclo3.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import co.usa.ciclo3.ciclo3.model.Reservation;
+import co.usa.ciclo3.ciclo3.reports.ClientCount;
+import co.usa.ciclo3.ciclo3.reports.StatusReservation;
 import co.usa.ciclo3.ciclo3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,5 +67,35 @@ public class ReservationService {
             return true;
         }).orElse(false);
         return aBoolean;
+    }
+
+    public StatusReservation getReportStatusReservation(){
+        List<Reservation> completed= metodosCrud.ReservationStatus("completed");
+        List<Reservation> cancelled= metodosCrud.ReservationStatus("cancelled");
+        return new StatusReservation(completed.size(), cancelled.size());
+    }
+
+    public List<Reservation> getReportTimeReservation(String dateA,String dateB){
+        SimpleDateFormat parser = new SimpleDateFormat("yyy-MM-dd");
+        Date date1 = new Date();
+        Date date2 = new Date();
+
+        try{
+            date1 = parser.parse(dateA);
+            date2 = parser.parse(dateB);
+        }
+        catch(ParseException evt){
+            evt.printStackTrace();
+
+        }if(date1.before(date2)){
+            return metodosCrud.ReservationTime(date1,date2);
+
+        }else{
+            return new ArrayList<>();
+        }
+    }
+
+    public List<ClientCount> serviceTopClient(){
+        return metodosCrud.getTopClient();
     }
 }
