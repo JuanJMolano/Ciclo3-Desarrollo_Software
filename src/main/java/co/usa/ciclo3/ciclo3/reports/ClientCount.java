@@ -11,20 +11,11 @@ public class ClientCount {
         this.client = client;
     }
 
-    public Long getTotal(){
-        return total;
-    }
+    public Long getTotal(){ return total;}
 
-    public void setTotal(Long total){
-        this.total = total;
-    }
+    public void setTotal(Long total){ this.total = total;}
 
-    public Client getClient() {
-        return client;
-    }
+    public Client getClient() { return client;}
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
+    public void setClient(Client client) { this.client = client;}
 }
