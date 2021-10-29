@@ -49,12 +49,8 @@ public class ReservationController {
     }
 
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
-    public List<Reservation> getReservationTime (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
-        return service.getReportTimeReservation(dateOne,dateTwo);
-    }
+    public List<Reservation> getReservationTime (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){return service.getReportTimeReservation(dateOne,dateTwo);}
 
     @GetMapping("/report-clients")
-    public List<ClientCount> getClient(){
-        return service.serviceTopClient();
-    }
+    public List<ClientCount> getClient(){return service.serviceTopClient();}
 }
